@@ -10,7 +10,7 @@ export class ToDoAccess {
         private readonly docClient: DocumentClient = new AWS.DynamoDB.DocumentClient(),
         private readonly s3Client: Types = new AWS.S3({ signatureVersion: 'v4' }),
         private readonly todoTable = process.env.TODOS_TABLE,
-        private readonly s3BucketName = process.env.S3_BUCKET_NAME) {
+        private readonly s3BucketName = process.env.S3_BUCKET) {
     }
 
     async getAllToDo(userId: string): Promise<TodoItem[]> {
